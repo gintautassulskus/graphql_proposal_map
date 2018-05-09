@@ -59,5 +59,4 @@ As specified in the [Input Coercion](#input_coercion) section, the map type is s
 
 #### Limiting Key type to String
 The above specification limits the key type to String. The decision is taken due to the following reasons:
-1. JSON supports only String keys.
-2. Keys of type Object would require elaborate JSON structures and would be prone to ambiguities in terms of interpretation.
+1. JSON specification supports only String keys; scuh key-value pairs are native to JSON objects;
