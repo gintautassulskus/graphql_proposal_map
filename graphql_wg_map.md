@@ -1,11 +1,15 @@
 ### Proposal
 
-[comment]: <> (Brief introduction)
+<!---
+Brief introduction
+--->
 At least three base collection types can be considered as prevalent in modern-day languages: lists, sets and maps.
 GraphQL specification already defines a [list](http://facebook.github.io/graphql/October2016/#sec-Lists) collection type that can also serve as a set.
 This proposal is fill in the gap and add the missing collection type - the map.
 
-[comment]: <> (Motivation)
+<!---
+Motivation
+--->
 The map collection type would benefit the GraphQL specification for the following reasons:
 1. A standardized exchange of map collections. At the moment, developers are forced to implement in-house solutions that:
     1. cannot take full advantage of GraphQL specification features such as [selection sets](http://facebook.github.io/graphql/October2016/#sec-Selection-Sets), [non-null field](http://facebook.github.io/graphql/October2016/#sec-Input-Types) or [introspection](http://facebook.github.io/graphql/October2016/#sec-Introspection) and results in obscured GraphQL schema;
@@ -13,7 +17,9 @@ The map collection type would benefit the GraphQL specification for the followin
 2. The map collection type simplifies the transfer of arbitrary JSON structures in special case scenarios avoiding "JSON structure as String" situations (please read the third point).
 3. A good practice should be encouraged by a convention rather than enforced by a limitation!
 
-[comment]: <> (The more formal spec goes here)
+<!---
+The more formal spec goes here
+--->
 ### Example Map specification
 
 A GraphQL map is a special collection type of unique key-value pairs which declares the type of each key and value in the map (referred to as the _key type_ and _value type_ of the map respectively). Each key-value pair in the map must be identified by exactly one key. The key type must be either String or ID and the value type is not restricted.
@@ -42,8 +48,10 @@ pets: {
 }
 ```
 
-[comment]: <> (Additional remarks)
-### Other conmsiderations
+<!---
+Additional remarks
+--->
+### Other considerations
 
 ##### Support for Map various implementations
 
