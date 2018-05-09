@@ -5,7 +5,7 @@ Brief introduction
 --->
 At least three base collection types can be considered as prevalent in modern-day languages: lists, sets and maps.
 GraphQL specification already defines a [list](http://facebook.github.io/graphql/October2016/#sec-Lists) collection type that can also serve as a set.
-This proposal is fill in the gap and add the missing collection type - the map.
+This proposal aims to fill in the gap and add the missing collection type - the map.
 
 <!---
 Motivation
