@@ -26,18 +26,18 @@ A GraphQL map is a special collection type of unique key-value pairs which decla
 
 Map key-value pairs are serialized in any order. Each key in the map is serialized as a String and each value is serialized as per the value type. To denote that a field uses a Map type the key and the value types are passed as map type parameters like this: `pets: Map(String, Pet)`, where String is the key type and Pet is the value type.
 
-###### Input Coercion
+#### Input Coercion
 <a name="input_coercion"></a>
 
 GraphQL servers must return an ordered list of key-value pairs as the result of a map type. Each key-value pair in the map must be the result of a result coercion of the corresponding key and value types. If a reasonable coercion is not possible they must raise a field error. In particular, if a non‐map is returned, the coercion should fail, as this indicates a mismatch in expectations between the type system and the implementation.
 
-###### Output Coercion
+#### Output Coercion
 
 When expected as an input, key-value pairs are accepted only when each key-value pair in the map can be accepted by the map's key and value types.
 
 If the key-value pair passed as an input to a map type is not a map and not the null value, it should be coerced as though the input was a map of size one, where the key-value pair passed is the only key-value pair in the map. This is to allow inputs that accept a “var-args” to declare their input type as a map; if only one argument is passed (a common case), the client can just pass that key-value pair rather than constructing the map.
 
-###### JSON representation
+#### JSON representation
 
 The given declaration of `pets: Map(String, Pet)` with two example key-value pairs ``{("pet1", "Chewy"), ("pet2", "Oscar")}`` translates to a JSON Object with a list of two key-value pairs:
 
@@ -53,11 +53,11 @@ Additional remarks
 --->
 ### Other considerations
 
-##### Support for Map various implementations
+#### Support for Map various implementations
 
 As specified in the [Input Coercion](#input_coercion) section, the map type is serialized to an ordered list of key-value pairs. This retains the semantics of various Map implementations such as unordered, ordered and sorted maps.
 
-##### Limiting Key type to String
+#### Limiting Key type to String
 The above specification limits the key type to String. The decision is taken due to the following reasons:
 1. JSON supports only String keys.
 2. String key reuses JSON primitive data produces for minimal size and simplicity.
